@@ -26,3 +26,7 @@ TODO-content.md
 # is public.
 application photos/
 specification sheet/
+
+# Repository backup bundles: these contain pre-rewrite history, including old
+# author identities. They must never be committed to a public repository.
+*.bundle
