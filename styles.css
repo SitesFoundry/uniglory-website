@@ -929,18 +929,31 @@ h3 {
 }
 .contact-details {
 	display: grid;
-	gap: 12px;
+	gap: 14px;
 	margin-top: 52px;
 }
-.contact-details a {
+/* Plain contact lines: no links, no underline, no divider rule. The icons carry
+   the meaning alongside the text, which stays selectable and copyable. */
+.contact-details p {
 	display: flex;
-	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
 	max-width: 330px;
-	padding-bottom: 10px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	margin: 0;
 	color: var(--white);
 	font-family: var(--body);
-	font-size: 14px;
+	font-size: 17px;
+	line-height: 1.4;
+}
+.contact-details svg {
+	width: 18px;
+	height: 18px;
+	flex: none;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 1.4;
+	stroke-linecap: round;
+	stroke-linejoin: round;
 }
 .quote-form {
 	padding: 30px;
@@ -1825,7 +1838,6 @@ h3 {
 main p a,
 .faq-intro a,
 .card-link,
-.contact-details a,
 .dark-link,
 .light-link {
 	text-decoration: underline;
