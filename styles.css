@@ -2216,3 +2216,33 @@ main p a:hover,
 		aspect-ratio: 16 / 9;
 	}
 }
+
+/* Contact strip beside the logo. It sits in the free space between the brand and
+   the right-aligned navigation at wide widths, and is hidden once the navigation
+   collapses, since both details remain complete in the footer. */
+.header-contact {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	margin-right: auto;
+	margin-left: 30px;
+	font-family: var(--body);
+	font-size: 12.5px;
+	line-height: 1;
+}
+.header-contact a {
+	/* The header is the light variant: measured colour of the neighbouring
+	   navigation links is rgba(13, 13, 15, 0.78) on white. White here would be
+	   invisible, which is exactly what the contrast audit caught. */
+	color: rgba(13, 13, 15, 0.74);
+	transition: color 0.2s ease;
+}
+.header-contact a:hover {
+	color: var(--ink);
+}
+
+@media (max-width: 980px) {
+	.header-contact {
+		display: none;
+	}
+}
