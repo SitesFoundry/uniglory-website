@@ -28,6 +28,10 @@ const entries = [
 	"BingSiteAuth.xml",
 	"CNAME",
 	"brand",
+	// Every image the pages reference. These live outside Vite's module graph
+	// (absolute /images/ paths), so the build cannot know about them and they must
+	// be copied explicitly - omitting this published a site whose images all 404'd.
+	"images",
 ];
 
 for (const name of entries) {
