@@ -1953,7 +1953,7 @@ main p a:hover,
    --------------------------------------------------------------------------- */
 .footer-grid {
 	display: grid;
-	grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+	grid-template-columns: minmax(0, 1.4fr) repeat(4, minmax(0, 1fr));
 	column-gap: 48px;
 	row-gap: 44px;
 	padding: 76px 0 52px;
