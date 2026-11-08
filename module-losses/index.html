@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Where the nameplate figure goes: temperature coefficient and NOCT, first-year and annual degradation, string mismatch, and the losses behind performance ratio." />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://www.unigloryenergy.com/module-losses/" />
+    <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.unigloryenergy.com/module-losses/" />
+    <meta property="og:title" content="Solar module losses and specification | UniGlory Energy" />
+    <meta property="og:description" content="Where the nameplate figure goes: temperature coefficient and NOCT, first-year and annual degradation, string mismatch, and the losses behind performance ratio." />
+    <meta property="og:image" content="https://www.unigloryenergy.com/brand/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="UniGlory Energy — wholesale solar modules, battery storage, and inverters" />
+    <meta property="og:site_name" content="UniGlory Energy" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Solar module losses and specification | UniGlory Energy" />
+    <meta name="twitter:description" content="Where the nameplate figure goes: temperature coefficient and NOCT, first-year and annual degradation, string mismatch, and the losses behind performance ratio." />
+    <meta name="twitter:image" content="https://www.unigloryenergy.com/brand/og-image.png" />
+    <title>Solar module losses and specification | UniGlory Energy</title>
+    <link rel="stylesheet" href="/styles.css?v=8" />
+    <script type="application/ld+json">
+            {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://www.unigloryenergy.com/module-losses/#webpage",
+            "url": "https://www.unigloryenergy.com/module-losses/",
+            "name": "Solar module losses and specification | UniGlory Energy",
+            "description": "Where the nameplate figure goes: temperature coefficient and NOCT, first-year and annual degradation, string mismatch, and the losses behind performance ratio.",
+            "isPartOf": {
+              "@id": "https://www.unigloryenergy.com/#website"
+            },
+            "about": {
+              "@id": "https://www.unigloryenergy.com/#organization"
+            },
+            "inLanguage": "en-US",
+            "dateModified": "2026-11-08"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.unigloryenergy.com/module-losses/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.unigloryenergy.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Solar modules",
+                "item": "https://www.unigloryenergy.com/solar-modules/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Module losses",
+                "item": "https://www.unigloryenergy.com/module-losses/"
+              }
+            ]
+          },
+          {
+            "@type": "TechArticle",
+            "@id": "https://www.unigloryenergy.com/module-losses/#article",
+            "isPartOf": {
+              "@id": "https://www.unigloryenergy.com/module-losses/#webpage"
+            },
+            "headline": "Solar module losses: temperature, degradation, mismatch and performance ratio",
+            "description": "Where the nameplate figure goes: temperature coefficient and NOCT, first-year and annual degradation, string mismatch, and the losses behind performance ratio.",
+            "author": {
+              "@id": "https://www.unigloryenergy.com/#organization"
+            },
+            "publisher": {
+              "@id": "https://www.unigloryenergy.com/#organization"
+            },
+            "inLanguage": "en-US",
+            "dateModified": "2026-11-08"
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.unigloryenergy.com/module-losses/#faq",
+            "isPartOf": {
+              "@id": "https://www.unigloryenergy.com/module-losses/#webpage"
+            },
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Which temperature coefficient should a project assume?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use the value on the datasheet of the module being specified, typically between −0.29 %/°C and −0.40 %/°C depending on cell technology. Apply it at the cell temperature the site actually reaches, which is well above ambient on a roof-mounted array."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does first-year degradation enter the financial model?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "As a separate step before the annual rate. Apply the first-year figure once, then the annual figure for every year after, and check both against the power warranty table rather than a single endpoint figure."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why does string voltage matter at low temperature?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Because open-circuit voltage rises as temperature falls. The highest string voltage of the year occurs on the coldest morning, and it is that figure that must stay below the inverter's maximum DC input voltage."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What performance ratio is realistic for a commercial array?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Roughly 0.75 to 0.85 for a clean, well-ventilated installation. Where a model shows more, check the soiling assumption, the availability figure and whether temperature loss was counted twice."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can UniGlory Energy supply modules with flash reports and traceability?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Every module we distribute comes from a BloombergNEF Tier 1 manufacturer and is supplied non-FEOC with supply-chain traceability documents. Stock ships from Houston, Texas and Los Angeles, California within five business days of cleared payment."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+      <div class="container nav-wrap">
+        <a class="brand" href="/" aria-label="UniGlory Energy home">
+          <img
+            class="brand-logo"
+            src="/brand/uniglory-logo.svg"
+            alt="UniGlory"
+            width="2450"
+            height="1110"
+          />
+        </a>
+        <div class="header-contact">
+          <a href="mailto:sales@unigloryenergy.com"
+            ><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="2" y="3.6" width="12" height="8.8" rx="1.6"/><path d="M2.7 4.8 8 8.6l5.3-3.8"/></svg><span>sales@unigloryenergy.com</span></a
+          >
+          <a href="tel:+19297775216"
+            ><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5.1 2.4c.5 0 .9.3 1.1.8l.6 1.6c.2.4.1.9-.2 1.2l-.8.7a8.4 8.4 0 0 0 3.9 3.9l.7-.8c.3-.3.8-.4 1.2-.2l1.6.6c.5.2.8.6.8 1.2v1.4c0 .8-.7 1.4-1.5 1.3C7.9 14.4 3.6 10.1 3 4.1c-.1-.8.6-1.7 1.4-1.7z"/></svg><span>929-777-5216</span></a
+          >
+        </div>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open navigation"
+        >
+          <span></span><span></span>
+        </button>
+        <nav
+          id="primary-nav"
+          class="primary-nav"
+          aria-label="Primary navigation"
+        >
+          <details class="nav-products">
+            <summary>Products</summary>
+            <div class="nav-products-panel">
+              <a href="/solar-modules/">Solar modules</a>
+              <a href="/battery-storage/">BESS</a>
+              <a href="/inverters/">Hybrid inverters</a>
+              <a class="panel-all" href="/#solutions">All solutions</a>
+            </div>
+          </details>
+          <a href="/#why-uniglory">Why UniGlory</a>
+          <a href="/#about">About</a>
+          <a href="/#faq">FAQ</a>
+          <a class="nav-cta" href="/#contact"
+            >Talk to our team <span aria-hidden="true">↗</span></a
+          >
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero" id="top">
+        <div class="container">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a
+            ><span class="sep" aria-hidden="true">/</span
+            ><a href="/solar-modules/">Solar modules</a
+            ><span class="sep" aria-hidden="true">/</span
+            ><span>Module losses</span>
+          </nav>
+          <p class="eyebrow">
+            <span class="eyebrow-dot"></span> Technical guide · Specification
+          </p>
+          <h1>The nameplate is<br /><em>a laboratory figure.</em></h1>
+          <p class="lede">
+            A module rated at 550 W produces 550 W in a flash test at
+            1,000 W/m² and 25 °C cell temperature. On a roof at 65 °C it produces
+            roughly 475 W, and the difference is not a defect — it is the
+            assumption a project has to be modelled on.
+          </p>
+          <div class="page-actions">
+            <a class="button button-primary" href="/#contact"
+              >Specify a project <span aria-hidden="true">↗</span></a
+            >
+            <a class="text-link dark-link" href="#losses-faq"
+              >Read the FAQ <span aria-hidden="true">↓</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="section-label">
+              <span>01</span><span>Standard conditions</span>
+            </div>
+            <div>
+              <p class="eyebrow dark-eyebrow">Where the number comes from</p>
+              <h2>One set of conditions<br /><span>gives one number.</span></h2>
+            </div>
+            <p class="heading-note">
+              The rating is a measurement protocol, not a prediction.
+            </p>
+          </div>
+          <div class="benefit-list reveal reveal-delay">
+            <div class="benefit">
+              <span class="benefit-number">01</span>
+              <div>
+                <h3>Standard test conditions are fixed and artificial</h3>
+                <p>
+                  STC means <strong>1,000 W/m²</strong> irradiance, a
+                  <strong>25 °C</strong> cell temperature and the AM 1.5
+                  reference spectrum. A real installation rarely holds all three
+                  at once — which is exactly why every datasheet also publishes
+                  the coefficients below.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">02</span>
+              <div>
+                <h3>NOCT describes a more realistic cell</h3>
+                <p>
+                  Nominal operating cell temperature is measured at 800 W/m²,
+                  20 °C ambient and 1 m/s wind, and typically lands between
+                  <strong>42 °C and 46 °C</strong>. It is the anchor for
+                  estimating cell temperature on site, not a second power rating.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">03</span>
+              <div>
+                <h3>Every published figure is at STC unless stated</h3>
+                <p>
+                  Bifacial gain, low-irradiance behaviour and temperature
+                  coefficients are quoted separately because they are corrections
+                  to the STC value. Mixing a bifacial figure into an STC
+                  comparison inflates one product against another.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="section-label">
+              <span>02</span><span>Temperature</span>
+            </div>
+            <div>
+              <p class="eyebrow dark-eyebrow">The largest single loss</p>
+              <h2>Every degree costs<br /><span>a fraction of a percent.</span></h2>
+            </div>
+            <p class="heading-note">
+              On a commercial roof this is the difference between the design and
+              the inverter's nameplate.
+            </p>
+          </div>
+          <div class="benefit-list reveal reveal-delay">
+            <div class="benefit">
+              <span class="benefit-number">01</span>
+              <div>
+                <h3>The coefficient is negative, and it is per degree</h3>
+                <p>
+                  Pmax temperature coefficients sit around
+                  <strong>−0.29 %/°C to −0.35 %/°C</strong> for N-type TOPCon and
+                  a little higher for PERC. The figure is a percentage of rated
+                  power for each degree above 25 °C.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">02</span>
+              <div>
+                <h3>Working the example through</h3>
+                <p>
+                  At 65 °C cell temperature and −0.34 %/°C, the correction is
+                  40 × 0.34 = <strong>13.6 %</strong>. A 550 W module therefore
+                  delivers about <strong>475 W</strong> — not because it
+                  underperforms, but because the rating was measured at 25 °C.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">03</span>
+              <div>
+                <h3>Two modules with the same wattage are not equal</h3>
+                <p>
+                  A 0.05 %/°C difference between two products is about 2.7 % of
+                  output at 65 °C. Over a 25-year model on a large array that
+                  gap usually outweighs a small difference in price per watt, so
+                  the coefficient belongs in the comparison alongside the rating.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="section-label">
+              <span>03</span><span>Degradation</span>
+            </div>
+            <div>
+              <p class="eyebrow dark-eyebrow">The two-part warranty</p>
+              <h2>Year one, then<br /><span>every year after.</span></h2>
+            </div>
+            <p class="heading-note">
+              The financial model needs both figures, and the warranty separates
+              them too.
+            </p>
+          </div>
+          <div class="benefit-list reveal reveal-delay">
+            <div class="benefit">
+              <span class="benefit-number">01</span>
+              <div>
+                <h3>First-year loss is larger than the annual rate</h3>
+                <p>
+                  N-type TOPCon modules are typically warranted at around
+                  <strong>1 %</strong> degradation in the first year, with PERC
+                  around <strong>2 %</strong>, then roughly
+                  <strong>0.4–0.55 %</strong> a year thereafter. A model that
+                  applies the annual rate from year one will overstate output.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">02</span>
+              <div>
+                <h3>Product warranty and power warranty are different documents</h3>
+                <p>
+                  The product warranty covers materials and workmanship; the
+                  power warranty covers the output curve at a stated year. A
+                  lender reads the second, and the year-25 or year-30 figure is
+                  the one that has to hold in the cash flow.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">03</span>
+              <div>
+                <h3>Ask for the curve, not the headline</h3>
+                <p>
+                  A single "84 % at year 25" figure can be reached by different
+                  paths. The datasheet's year-by-year table is what the model
+                  should use, and it is also the quickest way to compare two
+                  products that quote the same endpoint.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="section-label">
+              <span>04</span><span>Mismatch</span>
+            </div>
+            <div>
+              <p class="eyebrow dark-eyebrow">Strings, not modules</p>
+              <h2>Cold is the<br /><span>dangerous end.</span></h2>
+            </div>
+            <p class="heading-note">
+              Half-cut cells reduce mismatch loss; string voltage can still
+              exceed the inverter's limit.
+            </p>
+          </div>
+          <div class="benefit-list reveal reveal-delay">
+            <div class="benefit">
+              <span class="benefit-number">01</span>
+              <div>
+                <h3>One weak module affects the whole string</h3>
+                <p>
+                  Modules in series carry the same current, so a soiled, shaded or
+                  underperforming unit limits every other module in that string.
+                  Half-cut cell layouts and bypass diodes reduce the penalty, but
+                  they do not remove it.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">02</span>
+              <div>
+                <h3>Open-circuit voltage rises as temperature falls</h3>
+                <p>
+                  Voc has a negative temperature coefficient of roughly
+                  −0.25 %/°C to −0.30 %/°C, which means the highest string
+                  voltage of the year occurs on the coldest morning, not at
+                  midday in summer. String sizing is checked against the
+                  inverter's maximum input at that condition.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">03</span>
+              <div>
+                <h3>The inverter window sets the string length</h3>
+                <p>
+                  Both ends matter: the cold-morning Voc must stay below the
+                  inverter's maximum DC voltage, and the hot-afternoon Vmp must
+                  stay above its minimum operating voltage or the array stops
+                  producing while the sun is still up.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="section-label">
+              <span>05</span><span>Loss stack</span>
+            </div>
+            <div>
+              <p class="eyebrow dark-eyebrow">From DC to PR</p>
+              <h2>Seven losses,<br /><span>one ratio.</span></h2>
+            </div>
+            <p class="heading-note">
+              Performance ratio is the single figure a model is judged on.
+            </p>
+          </div>
+          <div class="benefit-list reveal reveal-delay">
+            <div class="benefit">
+              <span class="benefit-number">01</span>
+              <div>
+                <h3>What sits between the module and the meter</h3>
+                <p>
+                  Soiling, mismatch, DC wiring, inverter conversion, AC wiring and
+                  transformer, and availability each remove a few percent. Shading
+                  is site-specific and can dwarf all of them, so it belongs in the
+                  model as a measured figure rather than a default.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">02</span>
+              <div>
+                <h3>A well-designed commercial array lands around 0.75–0.85</h3>
+                <p>
+                  Performance ratio is actual yield divided by the yield the
+                  irradiance alone would allow. Values in that band are normal for
+                  a clean, well-ventilated array; a model promising noticeably
+                  more is usually carrying an optimistic assumption somewhere.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">03</span>
+              <div>
+                <h3>Temperature loss is not in the PR figure</h3>
+                <p>
+                  Performance ratio is conventionally calculated against the
+                  irradiance-derived energy at the actual cell temperature, so the
+                  temperature correction is applied earlier. Counting it twice is
+                  one of the most common modelling errors on a project.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="losses-faq">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="section-label">
+              <span>06</span><span>Specification FAQ</span>
+            </div>
+            <div>
+              <p class="eyebrow dark-eyebrow">Straight answers</p>
+              <h2>Straight answers<br /><span>on losses.</span></h2>
+            </div>
+            <p class="heading-note">
+              Something not covered?
+              <a class="text-link" href="/#contact">Ask our team ↗</a>
+            </p>
+          </div>
+          <div class="faq-list reveal reveal-delay">
+            <details>
+              <summary>Which temperature coefficient should a project assume?<span>+</span></summary>
+              <p>
+                Use the value on the datasheet of the module being specified,
+                typically between −0.29 %/°C and −0.40 %/°C depending on cell
+                technology. Apply it at the cell temperature the site actually
+                reaches, which is well above ambient on a roof-mounted array.
+              </p>
+            </details>
+            <details>
+              <summary>How does first-year degradation enter the financial model?<span>+</span></summary>
+              <p>
+                As a separate step before the annual rate. Apply the first-year
+                figure once, then the annual figure for every year after, and
+                check both against the power warranty table rather than a single
+                endpoint figure.
+              </p>
+            </details>
+            <details>
+              <summary>Why does string voltage matter at low temperature?<span>+</span></summary>
+              <p>
+                Because open-circuit voltage rises as temperature falls. The
+                highest string voltage of the year occurs on the coldest morning,
+                and it is that figure that must stay below the inverter's maximum
+                DC input voltage.
+              </p>
+            </details>
+            <details>
+              <summary>What performance ratio is realistic for a commercial array?<span>+</span></summary>
+              <p>
+                Roughly 0.75 to 0.85 for a clean, well-ventilated installation.
+                Where a model shows more, check the soiling assumption, the
+                availability figure and whether temperature loss was counted
+                twice.
+              </p>
+            </details>
+            <details>
+              <summary>Can UniGlory Energy supply modules with flash reports and traceability?<span>+</span></summary>
+              <p>
+                Yes. Every module we distribute comes from a BloombergNEF Tier 1
+                manufacturer and is supplied non-FEOC with supply-chain
+                traceability documents. Stock ships from Houston, Texas and Los
+                Angeles, California within five business days of cleared payment.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section page-cta">
+        <div class="container cta-inner reveal">
+          <p class="eyebrow">
+            <span class="eyebrow-dot"></span> Specification review
+          </p>
+          <h2>Send the datasheets.<br /><em>We will check the model.</em></h2>
+          <p>
+            Module model, array size and site conditions are enough to check the
+            temperature, degradation and mismatch assumptions against the
+            products being quoted. Inverter window checks are in the
+            <a class="text-link" href="/inverter-battery-matching/">matching guide</a>,
+            supply routes on the
+            <a class="text-link" href="/us-stock-solar-modules/">US stock</a> page,
+            and the module range on the
+            <a class="text-link" href="/solar-modules/">solar modules</a> page.
+          </p>
+          <a class="button button-primary" href="/#contact"
+            >Request a quote <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+    </main>
+
+<footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand-col">
+          <a class="brand" href="/" aria-label="UniGlory Energy home">
+            <img
+              class="brand-logo"
+              src="/brand/uniglory-logo-white.svg"
+              alt="UniGlory"
+              width="2450"
+              height="1110"
+            />
+          </a>
+          <p>Solar supply for a brighter, more capable tomorrow.</p>
+        </div>
+        <nav class="footer-col" aria-label="Products">
+          <h2>Products</h2>
+          <a href="/solar-modules/">Solar modules</a>
+          <a href="/battery-storage/">BESS</a>
+          <a href="/inverters/">Hybrid inverters</a>
+        </nav>
+        <nav class="footer-col" aria-label="Company">
+          <h2>Company</h2>
+          <a href="/#why-uniglory">Why UniGlory</a>
+          <a href="/#about">About</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        <div class="footer-col">
+          <h2>Get in touch</h2>
+          <p>UniGlory Energy | ACME Solar Inc.</p>
+          <a href="mailto:sales@unigloryenergy.com">sales@unigloryenergy.com</a>
+          <p>6255 Greasewood Ln<br />Phelan, CA 92371 &middot; USA</p>
+          <a href="tel:+19297775216">Tel: 929-777-5216</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>&copy; <span id="year"></span> UniGlory Energy. All rights reserved.</span>
+        <span>Wholesale solar modules, battery storage &amp; inverters</span>
+        <a class="footer-top-link" href="#top">Back to top &uarr;</a>
+      </div>
+    </footer>
+<script src="/script.js?v=2" defer></script>
+  </body>
+</html>

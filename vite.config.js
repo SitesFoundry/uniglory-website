@@ -24,6 +24,10 @@ export default defineConfig({
 					import.meta.dirname,
 					"inverter-battery-matching/index.html",
 				),
+				"module-losses": resolve(
+					import.meta.dirname,
+					"module-losses/index.html",
+				),
 			},
 		},
 	},
