@@ -2320,3 +2320,14 @@ main p a:hover,
 		gap: 22px 16px;
 	}
 }
+
+/* The first hero stat is a link to the US stock page. It must read as a fact, not
+   as a text link, so it inherits the surrounding colour and drops the underline. */
+.hero-proof a.proof-item {
+	color: inherit;
+	text-decoration: none;
+}
+.hero-proof a.proof-item:hover span {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
