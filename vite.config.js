@@ -20,6 +20,10 @@ export default defineConfig({
 					import.meta.dirname,
 					"us-stock-solar-modules/index.html",
 				),
+				"inverter-battery-matching": resolve(
+					import.meta.dirname,
+					"inverter-battery-matching/index.html",
+				),
 			},
 		},
 	},

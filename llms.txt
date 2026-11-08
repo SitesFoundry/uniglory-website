@@ -40,10 +40,13 @@ Key facts
 
 ## Pages
 
-- [Home](https://www.unigloryenergy.com/): company overview, product portfolio, the brands distributed, the brands distributed, how ordering works, FAQ, and a quote request form.
+- [Home](https://www.unigloryenergy.com/): company overview, product portfolio, the brands distributed, how ordering works, FAQ, and a quote request form.
 - [Solar modules](https://www.unigloryenergy.com/solar-modules/): the module range, what to check when specifying modules, and module-specific FAQ.
 - [BESS](https://www.unigloryenergy.com/battery-storage/): the LiFePO4 storage range from 16 kWh to 6.25 MWh, how to size energy against power, and BESS-specific FAQ.
 - [Inverters](https://www.unigloryenergy.com/inverters/): the grid-tied and hybrid inverter range, what to check when specifying an inverter, and inverter-specific FAQ.
+- [Inverter and battery matching](https://www.unigloryenergy.com/inverter-battery-matching/): how the battery's DC voltage window, charge and discharge current, C-rate, and a UL 9540 system listing decide whether an inverter and a battery work as a pair.
+- [BESS sizing guide](https://www.unigloryenergy.com/bess-sizing/): how to size energy against power, what the load profile and days-of-autonomy assumptions change, and which numbers to bring to a quote.
+- [US stock modules](https://www.unigloryenergy.com/us-stock-solar-modules/): BNEF Tier 1 modules held in Houston and Los Angeles, imported or US-assembled with domestic content, non-FEOC with traceability, dispatched within five business days.
 
 ## Contact
 
