@@ -16,6 +16,10 @@ export default defineConfig({
 				),
 				inverters: resolve(import.meta.dirname, "inverters/index.html"),
 				"bess-sizing": resolve(import.meta.dirname, "bess-sizing/index.html"),
+				"us-stock-solar-modules": resolve(
+					import.meta.dirname,
+					"us-stock-solar-modules/index.html",
+				),
 			},
 		},
 	},
