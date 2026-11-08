@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="A practical sizing method for commercial and utility-scale battery storage: power versus energy, C-rate, depth of discharge, degradation, and a worked example." />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://www.unigloryenergy.com/bess-sizing/" />
+    <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.unigloryenergy.com/bess-sizing/" />
+    <meta property="og:title" content="How to Size a Battery Storage System | UniGlory Energy" />
+    <meta property="og:description" content="A practical sizing method for commercial and utility-scale battery storage: power versus energy, C-rate, depth of discharge, degradation, and a worked example." />
+    <meta property="og:image" content="https://www.unigloryenergy.com/brand/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="UniGlory Energy — wholesale solar modules, battery storage, and inverters" />
+    <meta property="og:site_name" content="UniGlory Energy" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Size a Battery Storage System | UniGlory Energy" />
+    <meta name="twitter:description" content="A practical sizing method for commercial and utility-scale battery storage: power versus energy, C-rate, depth of discharge, degradation, and a worked example." />
+    <meta name="twitter:image" content="https://www.unigloryenergy.com/brand/og-image.png" />
+    <title>How to Size a Battery Storage System | UniGlory Energy</title>
+    <link rel="stylesheet" href="/styles.css?v=8" />
+    <script type="application/ld+json">
+                        {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://www.unigloryenergy.com/bess-sizing/#webpage",
+            "url": "https://www.unigloryenergy.com/bess-sizing/",
+            "name": "How to Size a Battery Storage System | UniGlory Energy",
+            "description": "A practical sizing method for commercial and utility-scale battery storage: power versus energy, C-rate, depth of discharge, degradation, and a worked example.",
+            "isPartOf": {
+              "@id": "https://www.unigloryenergy.com/#website"
+            },
+            "about": {
+              "@id": "https://www.unigloryenergy.com/#organization"
+            },
+            "inLanguage": "en-US",
+            "dateModified": "2026-11-06"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.unigloryenergy.com/bess-sizing/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.unigloryenergy.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "BESS",
+                "item": "https://www.unigloryenergy.com/battery-storage/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "BESS sizing guide",
+                "item": "https://www.unigloryenergy.com/bess-sizing/"
+              }
+            ]
+          },
+          {
+            "@type": "TechArticle",
+            "@id": "https://www.unigloryenergy.com/bess-sizing/#article",
+            "headline": "How to size a battery storage system",
+            "about": [
+              "battery energy storage",
+              "BESS sizing",
+              "peak shaving",
+              "depth of discharge"
+            ],
+            "inLanguage": "en-US",
+            "datePublished": "2026-11-06",
+            "dateModified": "2026-11-06",
+            "author": {
+              "@id": "https://www.unigloryenergy.com/#organization"
+            },
+            "publisher": {
+              "@id": "https://www.unigloryenergy.com/#organization"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://www.unigloryenergy.com/bess-sizing/#webpage"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.unigloryenergy.com/bess-sizing/#faq",
+            "isPartOf": {
+              "@id": "https://www.unigloryenergy.com/bess-sizing/#webpage"
+            },
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the difference between kW and kWh in a battery system?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "kW is the rate at which energy moves; kWh is the amount that moves. A 500 kWh system rated at 250 kW can deliver its energy in two hours. The same 500 kWh rated at 500 kW delivers it in one hour. The energy figure sets duration, and the power figure sets how fast the site can be served."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much capacity do I need to shave a peak?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Multiply the kW you want to remove by the hours you need to remove it for, then divide by the depth of discharge and by the end-of-warranty retention. A 250 kW reduction for three hours needs 750 kWh at the meter, which is roughly 900 kWh of nominal capacity once both adjustments are applied."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does a larger battery always mean a longer backup?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Backup duration is energy divided by the critical load. If the inverter or the interconnection limits the power, a larger battery serves the same load for longer but cannot serve a larger load at all. The critical-load list and the power rating have to be decided together."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can storage be expanded after installation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Usually yes, by paralleling additional units, within the parallel limit and control architecture of the product class. Expansion is cheaper when the first installation leaves headroom in the switchgear and the site footprint, so it is worth deciding at design time even if the second phase is years away."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <div class="container nav-wrap">
+        <a class="brand" href="/" aria-label="UniGlory Energy home">
+          <img
+            class="brand-logo"
+            src="/brand/uniglory-logo.svg"
+            alt="UniGlory"
+            width="2450"
+            height="1110"
+          />
+        </a>
+        <div class="header-contact">
+          <a href="mailto:sales@unigloryenergy.com"
+            ><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="2" y="3.6" width="12" height="8.8" rx="1.6"/><path d="M2.7 4.8 8 8.6l5.3-3.8"/></svg><span>sales@unigloryenergy.com</span></a
+          >
+          <a href="tel:+19297775216"
+            ><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5.1 2.4c.5 0 .9.3 1.1.8l.6 1.6c.2.4.1.9-.2 1.2l-.8.7a8.4 8.4 0 0 0 3.9 3.9l.7-.8c.3-.3.8-.4 1.2-.2l1.6.6c.5.2.8.6.8 1.2v1.4c0 .8-.7 1.4-1.5 1.3C7.9 14.4 3.6 10.1 3 4.1c-.1-.8.6-1.7 1.4-1.7z"/></svg><span>929-777-5216</span></a
+          >
+        </div>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open navigation"
+        >
+          <span></span><span></span>
+        </button>
+        <nav
+          id="primary-nav"
+          class="primary-nav"
+          aria-label="Primary navigation"
+        >
+          <details class="nav-products">
+            <summary>Products</summary>
+            <div class="nav-products-panel">
+              <a href="/solar-modules/">Solar modules</a>
+              <a href="/battery-storage/">BESS</a>
+              <a href="/inverters/">Hybrid inverters</a>
+              <a class="panel-all" href="/#solutions">All solutions</a>
+            </div>
+          </details>
+          <a href="/#why-uniglory">Why UniGlory</a>
+          <a href="/#about">About</a>
+          <a href="/#faq">FAQ</a>
+          <a class="nav-cta" href="/#contact"
+            >Talk to our team <span aria-hidden="true">↗</span></a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero" id="top">
+        <div class="container">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a
+            ><span class="sep" aria-hidden="true">/</span
+            ><span>BESS sizing</span>
+          </nav>
+          <p class="eyebrow">
+            <span class="eyebrow-dot"></span> Technical guide · U.S. market
+          </p>
+          <h1>How to size a<br /><em>battery storage system.</em></h1>
+          <p class="lede">
+            Most sizing mistakes start the same way: picking a number in kWh
+            before deciding what the system is for. This guide works from the
+            application down to the number, in the order the decisions actually
+            matter.
+          </p>
+          <div class="page-actions">
+            <a class="button button-primary" href="/battery-storage/"
+              >See the BESS range <span aria-hidden="true">↗</span></a
+            >
+            <a class="text-link dark-link" href="#sizing-faq"
+              >Read the sizing FAQ <span aria-hidden="true">↓</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="section-label">
+              <span>01</span><span>Start with the job</span>
+            </div>
+            <div>
+              <p class="eyebrow dark-eyebrow">Application first</p>
+              <h2>Four jobs.<br /><span>Four different shapes.</span></h2>
+            </div>
+            <p class="heading-note">
+              The same building can need 200 kWh or 2 MWh depending on which of
+              these it is doing.
+            </p>
+          </div>
+          <div class="benefit-list reveal reveal-delay">
+            <div class="benefit">
+              <span class="benefit-number">01</span>
+              <div>
+                <h3>Peak shaving and demand charges</h3>
+                <p>
+                  The battery covers the top slice of a load profile for a short
+                  window, usually 1–4 hours, once or twice a day. High power,
+                  short duration: the energy figure is small relative to the
+                  power figure.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">02</span>
+              <div>
+                <h3>Time-of-use arbitrage</h3>
+                <p>
+                  Charge in the cheap window, discharge in the expensive one.
+                  Duration is set by the length of the expensive period, not by
+                  the instantaneous load, so the energy figure grows while the
+                  power figure stays modest.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">03</span>
+              <div>
+                <h3>PV self-consumption</h3>
+                <p>
+                  Store what the array produces at midday for use in the evening.
+                  Sizing is driven by the array's daily production and the
+                  evening load, and is capped by how much surplus the site
+                  actually generates.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">04</span>
+              <div>
+                <h3>Backup and resilience</h3>
+                <p>
+                  Energy is set by the critical loads and how long they must
+                  survive, which is often far longer than an arbitrage window.
+                  This is the case where a modest power rating and a large energy
+                  rating appear together.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="section-label">
+              <span>02</span><span>Power and energy</span>
+            </div>
+            <div>
+              <p class="eyebrow dark-eyebrow">Two separate decisions</p>
+              <h2>kW and kWh<br /><span>are not interchangeable.</span></h2>
+            </div>
+            <p class="heading-note">
+              A system can have plenty of energy and too little power, or the
+              reverse. Both failures are common and both are avoidable.
+            </p>
+          </div>
+          <div class="benefit-list reveal reveal-delay">
+            <div class="benefit">
+              <span class="benefit-number">05</span>
+              <div>
+                <h3>Power, in kW, sets how fast</h3>
+                <p>
+                  It determines the inverter and power-conversion equipment
+                  rating, the size of the connection, and the shortest window in
+                  which the system can deliver its stored energy.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">06</span>
+              <div>
+                <h3>Energy, in kWh, sets how long</h3>
+                <p>
+                  It determines the duration at a given power. Doubling the
+                  energy at fixed power doubles the duration and changes nothing
+                  about how fast the system responds.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">07</span>
+              <div>
+                <h3>The C-rate ties the two together</h3>
+                <p>
+                  C-rate is power divided by energy. A 500 kWh system delivering
+                  250 kW runs at 0.5C, which is a two-hour system. The same
+                  500 kWh delivering 500 kW runs at 1C, a one-hour system. The
+                  datasheet usually states the rated C-rate, and that rating is
+                  what the warranty is written against.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="section-label">
+              <span>03</span><span>Nameplate vs usable</span>
+            </div>
+            <div>
+              <p class="eyebrow dark-eyebrow">The numbers behind the number</p>
+              <h2>What the nameplate<br /><span>figure hides.</span></h2>
+            </div>
+            <p class="heading-note">
+              Nominal capacity is a starting point. Four adjustments turn it into
+              what the site can actually use.
+            </p>
+          </div>
+          <div class="benefit-list reveal reveal-delay">
+            <div class="benefit">
+              <span class="benefit-number">08</span>
+              <div>
+                <h3>Depth of discharge</h3>
+                <p>
+                  Usable energy is nominal capacity multiplied by the depth of
+                  discharge the system is rated for. A 100 kWh pack rated at 90%
+                  DOD gives 90 kWh of usable energy, not 100.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">09</span>
+              <div>
+                <h3>Degradation over the warranty term</h3>
+                <p>
+                  Capacity falls with cycling. Sizing against the beginning-of-
+                  life figure means the system misses its target in year ten. The
+                  figure to size against is the end-of-warranty retention, which
+                  the warranty document states.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">10</span>
+              <div>
+                <h3>Auxiliary loads</h3>
+                <p>
+                  Thermal management consumes energy, and the share depends on
+                  the cooling design and the ambient conditions. It is small in
+                  mild climates and not small in a hot enclosure, so it belongs
+                  in the calculation rather than in a footnote.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">11</span>
+              <div>
+                <h3>Round-trip efficiency</h3>
+                <p>
+                  Energy returned is lower than energy stored. For a
+                  charge-then-discharge cycle, divide the required delivered
+                  energy by the round-trip efficiency to find the energy that
+                  must be bought, and compare the cost difference against the
+                  tariff spread.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="section-label">
+              <span>04</span><span>Worked example</span>
+            </div>
+            <div>
+              <p class="eyebrow dark-eyebrow">From requirement to capacity</p>
+              <h2>Trimming a peak<br /><span>by 250 kW for 3 hours.</span></h2>
+            </div>
+            <p class="heading-note">
+              Illustrative arithmetic, not a quotation. The figures come from the
+              requirement, not from a catalogue.
+            </p>
+          </div>
+          <div class="benefit-list reveal reveal-delay">
+            <div class="benefit">
+              <span class="benefit-number">A</span>
+              <div>
+                <h3>Energy required at the meter</h3>
+                <p>250 kW × 3 h = 750 kWh delivered to the site.</p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">B</span>
+              <div>
+                <h3>Adjusted for depth of discharge</h3>
+                <p>
+                  750 kWh ÷ 0.90 = 833 kWh of nominal capacity, at the rated DOD.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">C</span>
+              <div>
+                <h3>Adjusted for degradation</h3>
+                <p>
+                  Divide by the end-of-warranty retention the warranty states, so
+                  the target still holds in the final year of the term.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">D</span>
+              <div>
+                <h3>Pick the power rating and check the C-rate</h3>
+                <p>
+                  250 kW against roughly 900 kWh nominal is about 0.28C — a
+                  gentle duty cycle. If the resulting C-rate sits above the
+                  rated figure for the product class, the energy figure has to
+                  rise or the power figure has to fall.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">E</span>
+              <div>
+                <h3>Match to the cabinet class, then parallel</h3>
+                <p>
+                  Commercial cabinets in the 261 kWh class reach roughly 900 kWh
+                  with four units in parallel. Paralleling is the normal
+                  expansion path in this range, so confirm the parallel limit and
+                  the control architecture before fixing the count.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="section-label">
+              <span>05</span><span>The grid interface</span>
+            </div>
+            <div>
+              <p class="eyebrow dark-eyebrow">Often the real constraint</p>
+              <h2>The interconnection<br /><span>limits before the battery does.</span></h2>
+            </div>
+            <p class="heading-note">
+              A battery that cannot export, or cannot charge while the site is
+              importing at its limit, behaves differently from the one on the
+              datasheet.
+            </p>
+          </div>
+          <div class="benefit-list reveal reveal-delay">
+            <div class="benefit">
+              <span class="benefit-number">12</span>
+              <div>
+                <h3>Export limits</h3>
+                <p>
+                  Where export is capped or refused, the battery has to work
+                  behind the meter. That changes the value case and can change
+                  the power rating, because the system may never need to deliver
+                  at full rate to the grid.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">13</span>
+              <div>
+                <h3>Charge power as well as discharge power</h3>
+                <p>
+                  Charging draws load. If the site is already near its
+                  interconnection limit during the cheap window, the battery
+                  cannot charge at rated power, and the achievable cycle is
+                  smaller than planned.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">14</span>
+              <div>
+                <h3>Ride-through and protection settings</h3>
+                <p>
+                  Voltage and frequency ride-through, anti-islanding and
+                  protection coordination are set with the utility, not chosen
+                  from the datasheet. Confirm them before the equipment order,
+                  not after.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="section-label">
+              <span>06</span><span>Checklist</span>
+            </div>
+            <div>
+              <p class="eyebrow dark-eyebrow">Before you ask for a price</p>
+              <h2>Eight figures<br /><span>that decide the answer.</span></h2>
+            </div>
+            <p class="heading-note">
+              A supplier can size a system from these. Without them, any capacity
+              figure is a guess.
+            </p>
+          </div>
+          <div class="benefit-list reveal reveal-delay">
+            <div class="benefit">
+              <span class="benefit-number">01</span>
+              <div>
+                <h3>Peak demand and its shape</h3>
+                <p>
+                  The interval data for a typical week, not the monthly maximum.
+                  The shape decides whether the job is power-heavy or
+                  energy-heavy.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">02</span>
+              <div>
+                <h3>Target reduction and duration</h3>
+                <p>
+                  How many kW to remove, for how many hours, and how often per
+                  day. These three numbers produce the energy figure directly.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">03</span>
+              <div>
+                <h3>Tariff structure</h3>
+                <p>
+                  Demand charges, time-of-use periods and export compensation
+                  decide whether the case is arbitrage, peak shaving, or both.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">04</span>
+              <div>
+                <h3>Interconnection limit and export status</h3>
+                <p>
+                  The approved import and export figures, and whether any
+                  increase is possible. This bounds the whole design.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">05</span>
+              <div>
+                <h3>Site footprint and access</h3>
+                <p>
+                  Available area, door widths, floor loading, and how the
+                  equipment gets to the pad. Siting constraints eliminate more
+                  options than electrical ones do.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">06</span>
+              <div>
+                <h3>Ambient conditions</h3>
+                <p>
+                  Peak temperature and whether the enclosure is shaded. Thermal
+                  management capacity and derating follow from this.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">07</span>
+              <div>
+                <h3>Growth expectation</h3>
+                <p>
+                  Whether the site will add load or generation within the
+                  equipment's life. It decides whether to buy the final capacity
+                  now or plan for paralleling later.
+                </p>
+              </div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-number">08</span>
+              <div>
+                <h3>Timeline and phasing</h3>
+                <p>
+                  Whether the battery must be live for a specific date, and
+                  whether the project can be delivered in stages.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="sizing-faq">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="section-label">
+              <span>07</span><span>Sizing FAQ</span>
+            </div>
+            <div>
+              <p class="eyebrow dark-eyebrow">Straight answers</p>
+              <h2>Straight answers<br /><span>on sizing.</span></h2>
+            </div>
+            <p class="heading-note">
+              Something not covered?
+              <a class="text-link" href="/#contact">Ask our team ↗</a>
+            </p>
+          </div>
+          <div class="faq-list reveal reveal-delay">
+            <details>
+              <summary
+                >What is the difference between kW and kWh in a battery
+                system?<span>+</span></summary
+              >
+              <p>
+                kW is the rate at which energy moves; kWh is the amount that
+                moves. A 500 kWh system rated at 250 kW can deliver its energy in
+                two hours. The same 500 kWh rated at 500 kW delivers it in one
+                hour. The energy figure sets duration, and the power figure sets
+                how fast the site can be served.
+              </p>
+            </details>
+            <details>
+              <summary
+                >How much capacity do I need to shave a peak?<span
+                  >+</span
+                ></summary
+              >
+              <p>
+                Multiply the kW you want to remove by the hours you need to
+                remove it for, then divide by the depth of discharge and by the
+                end-of-warranty retention. A 250 kW reduction for three hours
+                needs 750 kWh at the meter, which is roughly 900 kWh of nominal
+                capacity once both adjustments are applied.
+              </p>
+            </details>
+            <details>
+              <summary
+                >Does a larger battery always mean a longer backup?<span
+                  >+</span
+                ></summary
+              >
+              <p>
+                No. Backup duration is energy divided by the critical load. If
+                the inverter or the interconnection limits the power, a larger
+                battery serves the same load for longer but cannot serve a
+                larger load at all. The critical-load list and the power rating
+                have to be decided together.
+              </p>
+            </details>
+            <details>
+              <summary
+                >Can storage be expanded after installation?<span
+                  >+</span
+                ></summary
+              >
+              <p>
+                Usually yes, by paralleling additional units, within the parallel
+                limit and control architecture of the product class. Expansion
+                is cheaper when the first installation leaves headroom in the
+                switchgear and the site footprint, so it is worth deciding at
+                design time even if the second phase is years away.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section page-cta">
+        <div class="container cta-inner reveal">
+          <p class="eyebrow">
+            <span class="eyebrow-dot"></span> Sizing help, from the supply side
+          </p>
+          <h2>Send the load data.<br /><em>We will size it with you.</em></h2>
+          <p>
+            Peak shape, target reduction, tariff and interconnection limit are
+            enough to work from. The <a class="text-link" href="/battery-storage/"
+              >BESS range</a
+            >
+            covers 16 kWh to 6.25 MWh across residential, commercial and
+            utility-scale tiers.
+          </p>
+          <a class="button button-primary" href="/#contact"
+            >Request a quote <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand-col">
+          <a class="brand" href="/" aria-label="UniGlory Energy home">
+            <img
+              class="brand-logo"
+              src="/brand/uniglory-logo-white.svg"
+              alt="UniGlory"
+              width="2450"
+              height="1110"
+            />
+          </a>
+          <p>Solar supply for a brighter, more capable tomorrow.</p>
+        </div>
+        <nav class="footer-col" aria-label="Products">
+          <h2>Products</h2>
+          <a href="/solar-modules/">Solar modules</a>
+          <a href="/battery-storage/">BESS</a>
+          <a href="/inverters/">Hybrid inverters</a>
+        </nav>
+        <nav class="footer-col" aria-label="Company">
+          <h2>Company</h2>
+          <a href="/#why-uniglory">Why UniGlory</a>
+          <a href="/#about">About</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        <div class="footer-col">
+          <h2>Get in touch</h2>
+          <p>UniGlory Energy | ACME Solar Inc.</p>
+          <a href="mailto:sales@unigloryenergy.com">sales@unigloryenergy.com</a>
+          <p>6255 Greasewood Ln<br />Phelan, CA 92371 &middot; USA</p>
+          <a href="tel:+19297775216">Tel: 929-777-5216</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>&copy; <span id="year"></span> UniGlory Energy. All rights reserved.</span>
+        <span>Wholesale solar modules, battery storage &amp; inverters</span>
+        <a class="footer-top-link" href="#top">Back to top &uarr;</a>
+      </div>
+    </footer>
+
+    <script src="/script.js?v=2" defer></script>
+  </body>
+</html>

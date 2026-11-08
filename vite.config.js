@@ -15,6 +15,7 @@ export default defineConfig({
 					"battery-storage/index.html",
 				),
 				inverters: resolve(import.meta.dirname, "inverters/index.html"),
+				"bess-sizing": resolve(import.meta.dirname, "bess-sizing/index.html"),
 			},
 		},
 	},
